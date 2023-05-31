@@ -1,5 +1,4 @@
 import clientPromise from "../lib/mongodb";
-
 export default function Movies({ movies }) {
     return (
         <div>
@@ -10,6 +9,7 @@ export default function Movies({ movies }) {
             <ul>
                 {movies.map((movie) => (
                     <li>
+                        <img src={movie.poster} alt="poster" width= "200" height="200" />
                         <h2>{movie.title}</h2>
                         <h3>{movie.metacritic}</h3>
                         <p>{movie.plot}</p>
