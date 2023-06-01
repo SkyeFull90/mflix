@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import {Inter} from 'next/font/google'
+
+
+const inter = Inter({ subsets: ['latin']})
 
 type ConnectionStatus = {
   isConnected: boolean
@@ -37,13 +41,13 @@ export default function Home({
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Mflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={`${inter.className}`}>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
+          Welcome to <a href="https://nextjs.org">Mflix Built with Next.js and MongoDB!</a>
         </h1>
 
         {isConnected ? (
@@ -56,7 +60,8 @@ export default function Home({
         )}
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Get started by editing&nbsp;
+           <code>pages/index.tsx</code>
         </p>
 
         <div className="grid">
