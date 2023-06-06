@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<
 }
 
 export default function Home({
-  isConnected,
+  isConnected,  
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className="container">
@@ -58,7 +58,7 @@ export default function Home({
             for instructions.
           </h2>
         )}
-
+        
         <p className="description">
           Get started by editing&nbsp;
            <code>pages/index.tsx</code>
@@ -165,7 +165,7 @@ export default function Home({
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 3rem;
         }
 
         .title,
