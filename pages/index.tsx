@@ -2,6 +2,7 @@ import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import {Inter} from 'next/font/google'
+import Styles from '../Styles/Home.module.css'
 
 
 const inter = Inter({ subsets: ['latin']})
@@ -39,13 +40,13 @@ export default function Home({
   isConnected,  
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Mflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={`${inter.className}`}>
+      <main className={`${Styles.main} ${inter.className}`}>
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">Mflix Built with Next.js and MongoDB!</a>
         </h1>
@@ -59,12 +60,12 @@ export default function Home({
           </h2>
         )}
         
-        <p className="description">
+        <p className={Styles.description}>
           Get started by editing&nbsp;
-           <code>pages/index.tsx</code>
+           <code className={Styles.code}>pages/index.tsx</code>
         </p>
 
-        <div className="grid">
+        <div className={Styles.grid}>
           <a href="https://nextjs.org/docs" className="card shadow-lg shadow-cyan-500/50">
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -240,21 +241,6 @@ export default function Home({
             width: 100%;
             flex-direction: column;
           }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
         }
       `}</style>
     </div>
